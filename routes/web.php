@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::middleware([
 
 
 Route::get('/redirect', [HomeController::class, 'redirect']);
+
+Route::get('/category', [AdminController::class, 'category']);
+
+Route::post('/add_category', [AdminController::class, 'add_category']);

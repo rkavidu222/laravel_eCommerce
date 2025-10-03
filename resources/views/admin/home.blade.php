@@ -7,24 +7,21 @@
 
   <body>
     <div class="container-scroller">
-      <!-- partial:partials/_sidebar.html -->
-        @include('admin.sidebar')
-      <!-- partial -->
+    @include('admin.sidebar')
 
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
+    <div class="container-fluid page-body-wrapper">
         @include('admin.navbar')
-        <!-- partial -->
-        @include('admin.body')
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          @include('admin.footer')
-          <!-- partial -->
+
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @include('admin.body')
+            </div>
+
+            @include('admin.footer')
         </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
     </div>
+</div>
+
 
     @include('admin.scripts')
   </body>
