@@ -34,6 +34,29 @@
                            </button>
                         </form>
 
+                        @if (Route::has('login'))
+
+
+                        @auth
+
+                        @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ route('profile.show') }}">My Profile</a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="dropdown-item" type="submit">Logout</button>
+                            </form>
+                        </div>
+                    </li>
+                    @endauth
+
+                        </li>
+
+                        @else
 
                         <li class="nav-item">
                            <a class="btn btn-primary" id="logincss" href="{{ route('login') }}">Login</a>
@@ -42,6 +65,9 @@
                         <li class="nav-item">
                            <a class="btn btn-success" href="{{ route('register') }}">Register</a>
                         </li>
+
+                        @endauth
+                        @endif
 
 
                      </ul>
